@@ -1,0 +1,52 @@
+{
+  "name": "@qubit/prosync",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Reusable Vue 3 component library with PrimeVue and Tailwind CSS",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "build:all": "npm run build && npm run build:types",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0",
+    "primevue": "^3.50.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^4.3.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.1.0",
+    "primevue": "^3.50.0"
+  },
+  "keywords": [
+    "vue",
+    "component-library",
+    "primevue",
+    "tailwindcss",
+    "typescript"
+  ],
+  "author": "Ryedonna Epin",
+  "license": ""
+}
