@@ -33,7 +33,7 @@ npm install file:../path/to/ui-component-kit
 #### Option B: Git Repository (Installation to Project)
 
 ```bash
-npm install git+https://github.com/ryedonna/prosync.git
+npm install git+https://github.com/prosync-2026/ui-component.git
 ```
 
 ## Usage in Your Projects
