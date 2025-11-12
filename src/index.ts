@@ -4,29 +4,29 @@ import type { App, Plugin } from 'vue'
 import './styles/main.css'
 
 // Import components
-import { Button } from './components/Button'
-import { Card } from './components/Card'
-import { Input } from './components/Input'
-import { Select } from './components/Select'
+import { ProButton } from './components/ProButton'
+import { ProCard } from './components/ProCard'
+import { ProInput } from './components/ProInput'
+import { ProSelect } from './components/ProSelect'
 
 // Export individual components
-export { Button, Card, Input, Select }
+export { ProButton, ProCard, ProInput, ProSelect }
 
 // Export types
-export type { ButtonProps } from './components/Button'
-export type { CardProps } from './components/Card'
-export type { InputProps } from './components/Input'
-export type { SelectProps } from './components/Select'
+export type { ProButtonProps } from './components/ProButton'
+export type { ProCardProps } from './components/ProCard'
+export type { ProInputProps } from './components/ProInput'
+export type { ProSelectProps } from './components/ProSelect'
 
 // Create plugin for global registration
-export const VueComponentLibrary: Plugin = {
+export const ProsyncUIComponents: Plugin = {
   install(app: App) {
-    app.component('AppButton', Button)
-    app.component('AppCard', Card)
-    app.component('AppInput', Input)
-    app.component('AppSelect', Select)
+    app.component('ProButton', ProButton)
+    app.component('ProCard', ProCard)
+    app.component('ProInput', ProInput)
+    app.component('ProSelect', ProSelect)
   },
 }
 
 // Also export as default for convenience
-export default VueComponentLibrary
+export default ProsyncUIComponents

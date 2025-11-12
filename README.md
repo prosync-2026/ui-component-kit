@@ -1,4 +1,4 @@
-# Vue Component Library
+# Prosync UI Component Kit
 
 A reusable Vue 3 component library built with PrimeVue 3, Tailwind CSS, and TypeScript.
 
@@ -15,7 +15,7 @@ A reusable Vue 3 component library built with PrimeVue 3, Tailwind CSS, and Type
 ### Step 1: Build the Library
 
 ```bash
-cd vue-component-library
+cd ui-component-kit
 npm install
 npm run build
 ```
@@ -27,30 +27,13 @@ You have several options:
 #### Option A: Local Installation (Development)
 
 ```bash
-npm install file:../path/to/vue-component-library
+npm install file:../path/to/ui-component-kit
 ```
 
-#### Option B: Private NPM Registry
-
-1. Configure your `.npmrc`:
-```
-@your-org:registry=https://your-private-registry.com
-```
-
-2. Publish:
-```bash
-npm publish
-```
-
-3. Install:
-```bash
-npm install @your-org/vue-component-library
-```
-
-#### Option C: Git Repository
+#### Option B: Git Repository (Installation to Project)
 
 ```bash
-npm install git+https://github.com/your-org/vue-component-library.git
+npm install git+https://github.com/ryedonna/prosync.git
 ```
 
 ## Usage in Your Projects
@@ -81,7 +64,7 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     // Add this line to include library components
-    "./node_modules/@your-org/vue-component-library/dist/**/*.{js,mjs}",
+    "./node_modules/@prosync/ui-component-kit/dist/**/*.{js,mjs}",
   ],
   theme: {
     extend: {},
@@ -104,13 +87,13 @@ import 'primevue/resources/themes/lara-light-blue/theme.css'
 import 'primeicons/primeicons.css'
 
 // Import your component library
-import ComponentLibrary from '@your-org/vue-component-library'
-import '@your-org/vue-component-library/style.css'
+import ProsyncUIComponents from '@prosync/ui-component-kit'
+import '@prosync/ui-component-kit/style.css'
 
 const app = createApp(App)
 
 app.use(PrimeVue)
-app.use(ComponentLibrary)
+app.use(ProsyncUIComponents)
 
 app.mount('#app')
 ```
@@ -119,39 +102,39 @@ app.mount('#app')
 
 ```vue
 <script setup lang="ts">
-import { Button, Card, Input } from '@your-org/vue-component-library'
-import '@your-org/vue-component-library/style.css'
+import { ProButton, ProCard, ProInput } from '@prosync/ui-component-kit'
+import '@prosync/ui-component-kit/style.css'
 </script>
 
 <template>
-  <Card title="Login Form">
-    <Input
+  <ProCard title="Login Form">
+    <ProInput
       v-model="email"
       label="Email"
       type="email"
       placeholder="Enter your email"
     />
     
-    <Input
+    <ProInput
       v-model="password"
       label="Password"
       type="password"
       placeholder="Enter your password"
     />
     
-    <Button variant="primary" @click="handleLogin">
+    <ProButton variant="primary" @click="handleLogin">
       Login
-    </Button>
-  </Card>
+    </ProButton>
+  </ProCard>
 </template>
 ```
 
 ## Available Components
 
-### Button
+### ProButton
 
 ```vue
-<Button
+<ProButton
   variant="primary"
   size="md"
   :loading="false"
@@ -159,7 +142,7 @@ import '@your-org/vue-component-library/style.css'
   @click="handleClick"
 >
   Click Me
-</Button>
+</ProButton>
 ```
 
 **Props:**
@@ -169,10 +152,10 @@ import '@your-org/vue-component-library/style.css'
 - `loading`: boolean
 - `fullWidth`: boolean
 
-### Card
+### ProCard
 
 ```vue
-<Card
+<ProCard
   title="Card Title"
   :elevated="true"
   :bordered="false"
@@ -187,7 +170,7 @@ import '@your-org/vue-component-library/style.css'
   <template #footer>
     Card Footer
   </template>
-</Card>
+</ProCard>
 ```
 
 **Props:**
@@ -196,10 +179,10 @@ import '@your-org/vue-component-library/style.css'
 - `bordered`: boolean
 - `hoverable`: boolean
 
-### Input
+### ProInput
 
 ```vue
-<Input
+<ProInput
   v-model="value"
   label="Label"
   placeholder="Placeholder"
@@ -222,6 +205,35 @@ import '@your-org/vue-component-library/style.css'
 - `error`: string
 - `hint`: string
 - `size`: 'sm' | 'md' | 'lg'
+
+### ProSelect
+
+```vue
+<ProSelect
+  v-model="selectedValue"
+  :options="options"
+  label="Select Label"
+  placeholder="Choose an option"
+  option-label="label"
+  option-value="value"
+  :filter="true"
+  :show-clear="true"
+/>
+```
+
+**Props:**
+- `modelValue`: any
+- `options`: any[]
+- `label`: string
+- `placeholder`: string
+- `optionLabel`: string (default: 'label')
+- `optionValue`: string (default: 'value')
+- `disabled`: boolean
+- `required`: boolean
+- `error`: string
+- `hint`: string
+- `filter`: boolean
+- `showClear`: boolean
 
 ## Customization
 
@@ -259,8 +271,7 @@ npm run build
 
 # Watch mode for development
 npm run dev
+
+# To view Storybook
+npm run storybook
 ```
-
-## License
-
-MIT
