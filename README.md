@@ -2,6 +2,9 @@
 
 A reusable Vue 3 component library built with PrimeVue 3, Tailwind CSS, and TypeScript.
 
+## UI Documentation & Playground
+https://prosync-ui-component-kit-docs.vercel.app/
+
 ## Features
 
 - 🎨 Built with Tailwind CSS for easy customization
